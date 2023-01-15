@@ -7,3 +7,5 @@ export const searchIcon =
 export const selectionIcon =
   "M1.41 0.295013L6 4.87501L10.59 0.295013L12 1.70501L6 7.70501L0 1.70501L1.41 0.295013Z";
 export const ArrowDownIcon = "M1 1L5 5L9 1";
+export const nextPageIcon =
+  "M0.333328 7.33341L3.66666 4.00008L0.333328 0.666748V7.33341Z";
