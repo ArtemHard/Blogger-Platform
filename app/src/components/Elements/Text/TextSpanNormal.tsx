@@ -1,14 +1,15 @@
 import styled from "styled-components";
 
 type TextSpanNormalPropsType = {
-    isActive?: boolean
-}
+  isActive?: boolean;
+};
 export const TextSpanNormal = styled.span<TextSpanNormalPropsType>`
-  font-family: 'Inter', sans-serif;
+  font-family: "Inter", sans-serif;
   font-style: normal;
   font-weight: 400;
   font-size: 14px;
   line-height: 24px;
+  padding-left: 15px;
 
-  color: ${(props) => props.isActive ? '#F8346B' : '#1A1718'};
-`
+  color: ${(props) => (props.isActive ? "#F8346B" : "#1A1718")};
+`;
