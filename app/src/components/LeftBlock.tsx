@@ -1,8 +1,7 @@
-import React from "react";
+import { useState } from "react";
 import styled from "styled-components";
-import { TextSpanNormal } from "./Elements/Text/TextSpanNormal";
-import { SvgIcon } from "./Elements/Icons/SvgIcon";
-import { blogIcon, postIcon } from "../img/icons/IconsConstant";
+import { BlogsBtn } from "./Elements/Buttons/BlogsBtn";
+import { PostsBtn } from "./Elements/Buttons/PostsBtn";
 
 const LeftColumn = styled.div`
   width: 15%;
@@ -17,26 +16,21 @@ const LeftColumn = styled.div`
 `;
 
 export const LeftBlock = () => {
+  const [isActiveBtn, setIsActiveBtn] = useState<"PostsBtn" | "BlogsBtn">(
+    "PostsBtn"
+  );
+
+  const ClickBlogsBtnHandler = () => {
+    setIsActiveBtn("BlogsBtn");
+  };
+  const ClickPostsBtnHandler = () => {
+    setIsActiveBtn("PostsBtn");
+  };
+
   return (
     <LeftColumn>
-      <div
-        style={{
-          display: "flex",
-          alignItems: "center",
-        }}
-      >
-        <SvgIcon isActive={true} d={blogIcon} viewBox='0 0 18 10' />
-        <TextSpanNormal isActive={true}>Blogs</TextSpanNormal>
-      </div>
-      <div
-        style={{
-          display: "flex",
-          alignItems: "center",
-        }}
-      >
-        <SvgIcon d={postIcon} viewBox='0 0 18 18' />
-        <TextSpanNormal>Posts</TextSpanNormal>
-      </div>
+      <BlogsBtn isActiveBtn={isActiveBtn} onClick={ClickBlogsBtnHandler} />
+      <PostsBtn isActiveBtn={isActiveBtn} onClick={ClickPostsBtnHandler} />
     </LeftColumn>
   );
 };
