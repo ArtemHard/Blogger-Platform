@@ -15,9 +15,21 @@ type CloudPropsType = {
   fill?: string;
   d: string;
   viewBox: string;
+  stroke?: string;
 };
-export const SvgIcon: FC<CloudPropsType> = ({ isActive, d, viewBox, fill }) => (
+
+export const SvgIcon: FC<CloudPropsType> = ({
+  isActive,
+  d,
+  viewBox,
+  fill,
+  stroke,
+}) => (
   <Svg viewBox={viewBox}>
-    <path fill={fill ? fill : isActive ? "#F8346B" : "#1A1718"} d={d} />
+    <path
+      fill={fill ? fill : isActive ? "#F8346B" : "#1A1718"}
+      d={d}
+      stroke={stroke}
+    />
   </Svg>
 );

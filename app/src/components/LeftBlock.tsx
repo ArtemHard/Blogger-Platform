@@ -5,10 +5,9 @@ import { SvgIcon } from "./Elements/Icons/SvgIcon";
 import { blogIcon, postIcon } from "../img/icons/IconsConstant";
 
 const LeftColumn = styled.div`
-  width: 30%;
+  width: 15%;
   height: 100vh;
   background: #fcfbfb;
-  background-color: #d9ffc4; // DELETE
   border-radius: 0px;
   display: flex;
   flex-direction: column;
