@@ -1,6 +1,6 @@
 import { FC } from "react";
 import styled from "styled-components";
-
+import { useNavigate } from "react-router-dom";
 const Wrapper = styled.div`
   min-height: 156px;
   margin-left: 24px;
@@ -33,6 +33,7 @@ const Title = styled.h1`
   font-weight: 600;
   font-size: 18px;
   line-height: 24px;
+  cursor: pointer;
   /* identical to box height, or 133% */
 
   /* Neutral Dark / -60 */
@@ -69,11 +70,13 @@ export type BlogPropsType = {
 };
 
 export const Blog: FC<BlogPropsType> = ({ title, website, text, img }) => {
+  const navigate = useNavigate();
+  const onClickTitleHandler = () => navigate("/blog/" + title);
   return (
     <Wrapper>
       <ImgTitle />
       <InfoWrapper>
-        <Title>{title}</Title>
+        <Title onClick={onClickTitleHandler}>{title}</Title>
         <WebsiteText>
           Website:{" "}
           <a style={{ textDecoration: "underline" }} href='#!'>

@@ -1,7 +1,4 @@
-import React from "react";
 import styled from "styled-components";
-import { selectionIcon } from "../../../img/icons/IconsConstant";
-import { SelectIconSvg } from "../Icons/SelectIconSvg";
 
 const Selection = styled.select`
   width: 30%;
@@ -10,22 +7,25 @@ const Selection = styled.select`
   outline: none;
   border: 1px solid #dedbdc;
   border-radius: 2px;
+
+  option {
+    background: #faf7f8;
+  }
 `;
 
 const options = [
   { value: "New blogs first", text: "New blogs first" },
-  { value: "Most populate", text: "Most populate" },
+  { value: "Old blogs first", text: "Old blogs first" },
+  { value: "From A to Z", text: "From A to Z" },
+  { value: "From Z to A", text: "From Z to A" },
 ];
 
 export const Select = () => {
   return (
-    <>
-      <Selection>
-        {options.map((v) => (
-          <option value={v.value}>{v.text}</option>
-        ))}
-      </Selection>
-      {/* <SelectIconSvg viewBox='0 0 12 8' d={selectionIcon} /> */}
-    </>
+    <Selection>
+      {options.map((v) => (
+        <option value={v.value}>{v.text}</option>
+      ))}
+    </Selection>
   );
 };

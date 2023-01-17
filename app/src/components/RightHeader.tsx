@@ -1,8 +1,8 @@
-import React from "react";
+import { FC } from "react";
 import styled from "styled-components";
 import { nextPageIcon } from "../img/icons/IconsConstant";
 import { SvgNextPageIcon } from "./Elements/Icons/SvgNextPageIcon";
-
+import { Link } from "react-router-dom";
 const HeaderNav = styled.h1`
   font-family: "Inter", sans-serif;
   font-style: normal;
@@ -34,18 +34,28 @@ const LinkHeader = styled.h3`
   padding: 5px 0 0 10px;
 `;
 
-export const RightHeader = () => {
+type RightHeaderPropsType = {
+  blogTitle?: string;
+  headerTitle?: "Blogs" | "Posts";
+};
+
+export const RightHeader: FC<RightHeaderPropsType> = ({
+  blogTitle,
+  headerTitle,
+}) => {
+  const h1Text = () => (headerTitle ? headerTitle : "Blogs");
+  const h1Link = () => (headerTitle ? headerTitle.toLowerCase() : "/ ");
   return (
     <HeaderNav>
-      Blogs
-      <SvgNextPageIcon d={nextPageIcon} viewBox='0 0 4 8' fill='#797476' />
-      <LinkHeader>
-        <a href='#!'>next-page2</a>
-      </LinkHeader>
-      <SvgNextPageIcon d={nextPageIcon} viewBox='0 0 4 8' fill='#797476' />
-      <LinkHeader>
-        <a href='#!'>next-page3</a>
-      </LinkHeader>
+      <Link to={h1Link()}>{h1Text()}</Link>
+      {blogTitle && (
+        <>
+          <SvgNextPageIcon d={nextPageIcon} viewBox='0 0 4 8' fill='#797476' />
+          <LinkHeader>
+            <a href='#!'>{blogTitle}</a>
+          </LinkHeader>
+        </>
+      )}
     </HeaderNav>
   );
 };
