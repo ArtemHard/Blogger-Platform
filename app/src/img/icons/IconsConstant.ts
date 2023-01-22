@@ -9,3 +9,5 @@ export const selectionIcon =
 export const ArrowDownIcon = "M1 1L5 5L9 1";
 export const nextPageIcon =
   "M0.333328 7.33341L3.66666 4.00008L0.333328 0.666748V7.33341Z";
+export const backArrow =
+  "M5 9.66659L5.93999 8.72659L2.88666 5.66659H13.6667V4.33325H2.88666L5.94666 1.27325L5 0.333252L0.333328 4.99992L5 9.66659Z";

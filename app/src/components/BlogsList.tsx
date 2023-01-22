@@ -4,7 +4,7 @@ import { ShowMoreBtn } from "./Elements/Buttons/ShowMoreBtn";
 import { RightHeader } from "./RightHeader";
 import { SearchControls } from "./SearchControls";
 
-const blogs = [
+export const blogs = [
   {
     title: "The best blog in our village",
     website: "https://www.youtube.com/",
@@ -24,13 +24,13 @@ const blogs = [
     img: " ",
   },
   {
-    title: "The best blog in our village",
+    title: "The best blog in our village2",
     website: "https://www.youtube.com/",
     text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor",
     img: " ",
   },
   {
-    title: "Warriors",
+    title: "Warriors2",
     website: "https://www.youtube.com/",
     text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor",
     img: " ",
@@ -42,7 +42,7 @@ export const BlogsList = () => {
       <RightHeader />
       <SearchControls />
       {blogs.map((b) => (
-        <Blog key={b.title} {...b} />
+        <Blog key={b.title} {...b} showMoreBtn={true} />
       ))}
       <ShowMoreBtn />
     </>

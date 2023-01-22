@@ -1,6 +1,7 @@
 import { FC } from "react";
 import styled from "styled-components";
 import { useNavigate } from "react-router-dom";
+import { ShowMoreBtn } from "../Elements/Buttons/ShowMoreBtn";
 const Wrapper = styled.div`
   min-height: 156px;
   margin-left: 24px;
@@ -67,9 +68,16 @@ export type BlogPropsType = {
   website: string;
   text: string;
   img: string;
+  showMoreBtn?: boolean;
 };
 
-export const Blog: FC<BlogPropsType> = ({ title, website, text, img }) => {
+export const Blog: FC<BlogPropsType> = ({
+  title,
+  website,
+  text,
+  img,
+  showMoreBtn,
+}) => {
   const navigate = useNavigate();
   const onClickTitleHandler = () => navigate("/blog/" + title);
   return (
@@ -84,6 +92,7 @@ export const Blog: FC<BlogPropsType> = ({ title, website, text, img }) => {
           </a>
         </WebsiteText>
         <MainText>{text}</MainText>
+        {showMoreBtn && <ShowMoreBtn border='none' />}
       </InfoWrapper>
     </Wrapper>
   );
