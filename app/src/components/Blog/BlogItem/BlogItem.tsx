@@ -25,9 +25,7 @@ export const BlogItem = () => {
       <BackNavBtn />
       <Image />
       {blogs.map((b) => {
-        if (b.title === title) {
-          return <Blog {...b} showMoreBtn={true} />;
-        }
+        if (b.title === title) return <Blog {...b} showMoreBtn={true} />;
       })}
     </>
   );

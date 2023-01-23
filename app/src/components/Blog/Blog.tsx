@@ -92,7 +92,7 @@ export const Blog: FC<BlogPropsType> = ({
           </a>
         </WebsiteText>
         <MainText>{text}</MainText>
-        {showMoreBtn && <ShowMoreBtn border='none' />}
+        {showMoreBtn && <ShowMoreBtn noBorder={true} />}
       </InfoWrapper>
     </Wrapper>
   );

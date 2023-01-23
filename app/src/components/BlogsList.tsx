@@ -42,7 +42,7 @@ export const BlogsList = () => {
       <RightHeader />
       <SearchControls />
       {blogs.map((b) => (
-        <Blog key={b.title} {...b} showMoreBtn={true} />
+        <Blog key={b.title} {...b} />
       ))}
       <ShowMoreBtn />
     </>
