@@ -5,6 +5,7 @@ import { BackNavBtn } from "../../Elements/Buttons/BackNavBtn";
 import styled from "styled-components";
 import { Blog } from "../Blog";
 import { blogs } from "../../BlogsList";
+import { ShowMoreBtn } from "../../Elements/Buttons/ShowMoreBtn";
 
 const Image = styled.img`
   width: 100%;

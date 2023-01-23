@@ -2,6 +2,7 @@ import { FC } from "react";
 import styled from "styled-components";
 import { useNavigate } from "react-router-dom";
 import { ShowMoreBtn } from "../Elements/Buttons/ShowMoreBtn";
+import { PostsList } from "../PostsList";
 const Wrapper = styled.div`
   min-height: 156px;
   margin-left: 24px;
