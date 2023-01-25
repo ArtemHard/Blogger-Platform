@@ -3,14 +3,46 @@ import styled from "styled-components";
 
 const PostWrapper = styled.div`
   width: 300px;
-  height: fit-content;
+  height: 304px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
 `;
 type ImagePropsType = {
   src: string;
 };
 const Image = styled.img.attrs<ImagePropsType>((props) => ({
   src: props.src,
-}))<ImagePropsType>``;
+}))<ImagePropsType>`
+  height: 180px;
+  width: 300px;
+  background-image: black;
+  padding-bottom: 18px;
+`;
+const Title = styled.h3`
+  font-family: "Inter", sans-serif;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 24px;
+  /* identical to box height, or 150% */
+
+  /* Neutral Dark / -60 */
+
+  color: #1a1718;
+  padding-bottom: 12px;
+`;
+
+const Text = styled.p`
+  font-family: "Inter", sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 24px;
+
+  color: #1a1718;
+`;
+
 type PostPropsType = {
   src: string;
   title: string;
@@ -18,5 +50,16 @@ type PostPropsType = {
   data: string;
 };
 export const Post: FC<PostPropsType> = ({ src, title, text, data }) => {
-  return <PostWrapper></PostWrapper>;
+  const smallText = (text: string): string => {
+    if (text.length > 20) return text.slice(0, 70) + " ...";
+    else return text;
+  };
+
+  return (
+    <PostWrapper>
+      <Image src={src} />
+      <Title>{title}</Title>
+      <Text>{smallText(text)}</Text>
+    </PostWrapper>
+  );
 };

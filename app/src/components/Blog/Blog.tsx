@@ -28,6 +28,7 @@ const InfoWrapper = styled.div`
   display: flex;
   flex-direction: column;
   align-items: flex-start;
+  justify-content: space-between;
 `;
 const Title = styled.h1`
   font-family: "Inter", sans-serif;

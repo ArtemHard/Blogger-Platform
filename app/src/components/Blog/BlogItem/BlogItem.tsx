@@ -5,7 +5,8 @@ import { BackNavBtn } from "../../Elements/Buttons/BackNavBtn";
 import styled from "styled-components";
 import { Blog } from "../Blog";
 import { blogs } from "../../BlogsList";
-import { ShowMoreBtn } from "../../Elements/Buttons/ShowMoreBtn";
+import { Post } from "../../Post/Post";
+import { PostsList } from "../../PostsList";
 
 const Image = styled.img`
   width: 100%;
@@ -28,6 +29,7 @@ export const BlogItem = () => {
       {blogs.map((b) => {
         if (b.title === title) return <Blog {...b} showMoreBtn={true} />;
       })}
+      <PostsList />
     </>
   );
 };
