@@ -39,8 +39,23 @@ const Text = styled.p`
   font-weight: 400;
   font-size: 16px;
   line-height: 24px;
-
+  padding-bottom: 6px;
   color: #1a1718;
+`;
+
+const CreationDate = styled.span`
+  font-family: "Inter", sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 16px;
+  /* identical to box height, or 133% */
+
+  letter-spacing: 0.02em;
+
+  /* Neutral Light / -60 */
+
+  color: #636262;
 `;
 
 type PostPropsType = {
@@ -60,6 +75,7 @@ export const Post: FC<PostPropsType> = ({ src, title, text, data }) => {
       <Image src={src} />
       <Title>{title}</Title>
       <Text>{smallText(text)}</Text>
+      <CreationDate>{data}</CreationDate>
     </PostWrapper>
   );
 };

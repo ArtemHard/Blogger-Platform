@@ -30,7 +30,9 @@ const InfoWrapper = styled.div`
   align-items: flex-start;
   justify-content: space-between;
 `;
-const Title = styled.h1`
+
+type TitlePropsType = { creationDate?: string };
+const Title = styled.h1<TitlePropsType>`
   font-family: "Inter", sans-serif;
   font-style: normal;
   font-weight: 600;
@@ -42,6 +44,20 @@ const Title = styled.h1`
   /* Neutral Dark / -60 */
 
   color: #1a1718;
+  margin-bottom: ${(props) => (props.creationDate ? "32px" : "")};
+`;
+
+const InfoCreation = styled.span`
+  font-family: "Inter", sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 16px;
+  /* identical to box height, or 133% */
+
+  letter-spacing: 0.02em;
+
+  color: #797476;
 `;
 
 const WebsiteText = styled.span`
@@ -71,6 +87,7 @@ export type BlogPropsType = {
   text: string;
   img: string;
   showMoreBtn?: boolean;
+  creationDate?: string;
 };
 
 export const Blog: FC<BlogPropsType> = ({
@@ -79,6 +96,7 @@ export const Blog: FC<BlogPropsType> = ({
   text,
   img,
   showMoreBtn,
+  creationDate,
 }) => {
   const navigate = useNavigate();
   const onClickTitleHandler = () => navigate("/blog/" + title);
@@ -86,7 +104,15 @@ export const Blog: FC<BlogPropsType> = ({
     <Wrapper>
       <ImgTitle />
       <InfoWrapper>
-        <Title onClick={onClickTitleHandler}>{title}</Title>
+        <Title creationDate={creationDate} onClick={onClickTitleHandler}>
+          {title}
+        </Title>
+        {creationDate && (
+          <InfoCreation>
+            Blog creation date:{" "}
+            <span style={{ color: "black" }}>{creationDate}</span>
+          </InfoCreation>
+        )}
         <WebsiteText>
           Website:{" "}
           <a style={{ textDecoration: "underline" }} href='#!'>

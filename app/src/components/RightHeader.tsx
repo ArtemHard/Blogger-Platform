@@ -44,7 +44,9 @@ export const RightHeader: FC<RightHeaderPropsType> = ({
   headerTitle,
 }) => {
   const h1Text = () => (headerTitle ? headerTitle : "Blogs");
-  const h1Link = () => (headerTitle ? headerTitle.toLowerCase() : "/ ");
+
+  const h1Link = () =>
+    headerTitle ? `${"/" + headerTitle.toLowerCase()}` : "/ ";
   return (
     <HeaderNav>
       <Link to={h1Link()}>{h1Text()}</Link>

@@ -4,7 +4,7 @@ import { useParams } from "react-router-dom";
 import { BackNavBtn } from "../../Elements/Buttons/BackNavBtn";
 import styled from "styled-components";
 import { Blog } from "../Blog";
-import { blogs } from "../../BlogsList";
+import { blogs } from "../../pages/BlogPage";
 import { Post } from "../../Post/Post";
 import { PostsList } from "../../PostsList";
 
