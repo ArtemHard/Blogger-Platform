@@ -1,4 +1,4 @@
-import React from "react";
+import { PostsList } from "../PostsList/PostsList";
 import { RightHeader } from "../RightHeader";
 import { SearchControls } from "../SearchControls";
 
@@ -7,6 +7,7 @@ export const PostsPage = () => {
     <>
       <RightHeader headerTitle='Posts' />
       <SearchControls noSearch={true} />
+      <PostsList />
     </>
   );
 };

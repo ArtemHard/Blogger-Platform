@@ -10,7 +10,7 @@ export const blogs = [
     website: "https://www.youtube.com/",
     text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor",
     img: " ",
-    creationDate: "12.05.2023",
+    // creationDate: "12.05.2023",
   },
   {
     title: "Warriors",

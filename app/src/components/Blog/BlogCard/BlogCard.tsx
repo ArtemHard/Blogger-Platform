@@ -1,7 +1,7 @@
 import { FC } from "react";
 import styled from "styled-components";
 
-const PostWrapper = styled.div`
+const BlogCardWrapper = styled.div`
   width: 300px;
   height: 304px;
   display: flex;
@@ -58,24 +58,24 @@ const CreationDate = styled.span`
   color: #636262;
 `;
 
-type PostPropsType = {
+type BlogCardPropsType = {
   src: string;
   title: string;
   text: string;
   data: string;
 };
-export const Post: FC<PostPropsType> = ({ src, title, text, data }) => {
+export const BlogCard: FC<BlogCardPropsType> = ({ src, title, text, data }) => {
   const smallText = (text: string): string => {
     if (text.length > 20) return text.slice(0, 70) + " ...";
     else return text;
   };
 
   return (
-    <PostWrapper>
+    <BlogCardWrapper>
       <Image src={src} />
       <Title>{title}</Title>
       <Text>{smallText(text)}</Text>
       <CreationDate>{data}</CreationDate>
-    </PostWrapper>
+    </BlogCardWrapper>
   );
 };

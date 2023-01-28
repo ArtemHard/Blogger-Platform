@@ -1,8 +1,8 @@
 import styled from "styled-components";
 import { ShowMoreBtn } from "./Elements/Buttons/ShowMoreBtn";
-import { Post } from "./Post/Post";
+import { BlogCard } from "./Blog/BlogCard/BlogCard";
 
-const PostsWrapper = styled.div`
+export const BlogsWrapper = styled.div`
   /* width: 100%; */
   margin: 48px 64px 0 24px;
   /* display: grid;
@@ -15,7 +15,7 @@ const PostsWrapper = styled.div`
   gap: 20px;
   flex-wrap: wrap;
 `;
-const posts = [
+const blogs = [
   {
     src: "",
     title: "AsalamaleikumBrat",
@@ -287,19 +287,19 @@ const posts = [
     data: "",
   },
 ];
-export const PostsList = () => {
+export const BlogsList = () => {
   // рендерим посты и задаём количество которое показать
-  const postLengthChecked = (posts: any[], countForShow = 6) => {
-    posts.splice(countForShow);
-    return posts.map((p, index) => {
-      return <Post {...p} key={index + "post"} />;
+  const postLengthChecked = (blogs: any[], countForShow = 6) => {
+    blogs.splice(countForShow);
+    return blogs.map((p, index) => {
+      return <BlogCard {...p} key={index + "post"} />;
     });
   };
 
   return (
-    <PostsWrapper>
-      {postLengthChecked(posts)}
+    <BlogsWrapper>
+      {postLengthChecked(blogs)}
       <ShowMoreBtn />
-    </PostsWrapper>
+    </BlogsWrapper>
   );
 };
