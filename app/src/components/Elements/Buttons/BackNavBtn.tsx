@@ -1,4 +1,4 @@
-import { useNavigate } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
 import styled from "styled-components";
 import { backArrow } from "../../../img/icons/IconsConstant";
 
@@ -43,17 +43,26 @@ const widthValue = (str: string) => str.split(" ")[2] + "px";
 const heightValue = (str: string) => str.split(" ")[3] + "px";
 
 export const BackNavBtn = () => {
+  const location = useLocation().pathname;
+
   const navigate = useNavigate();
+  // Выбирает куда редиректить при клике
   const btnClickHandler = () => {
-    navigate("/");
+    location.startsWith("/posts") ? navigate("/posts") : navigate("/");
   };
+  // выбирает Текст куда редиректит
+  const textBtnChoose = (path: string) => {
+    if (path.startsWith("/posts")) return "Back to posts";
+    if (path.startsWith("/")) return "Back to blogs";
+  };
+
   return (
     <BtnWrapper>
       <Button onClick={btnClickHandler}>
         <Svg viewBox='0 0 14 10'>
           <path fill='#1A1718' d={backArrow} />
         </Svg>
-        <TextBtn>Back to blogs</TextBtn>
+        <TextBtn>{textBtnChoose(location)}</TextBtn>
       </Button>
     </BtnWrapper>
   );

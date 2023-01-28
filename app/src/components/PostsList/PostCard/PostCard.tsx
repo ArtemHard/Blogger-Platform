@@ -1,4 +1,5 @@
 import { FC } from "react";
+import { useNavigate } from "react-router-dom";
 import styled from "styled-components";
 const Wrapper = styled.div`
   width: 300px;
@@ -50,8 +51,8 @@ const Title = styled.h1`
   /* identical to box height, or 150% */
 
   /* Neutral Dark / -60 */
-
   color: #1a1718;
+  cursor: pointer;
 `;
 const Info = styled.span`
   font-family: "Inter", sans-serif;
@@ -94,13 +95,18 @@ export const PostCard: FC<PostCardPropsType> = ({
   info,
   creationData,
 }) => {
+  const navigate = useNavigate();
+  const titleClickHandler = () => {
+    navigate(`${title}`);
+  };
+
   return (
     <Wrapper>
       <MainImg src={mainSrc} />
       <BottomWrapper>
         <Img src={imgSrc} />
         <InfoWrapper>
-          <Title>{title}</Title>
+          <Title onClick={titleClickHandler}>{title}</Title>
           <Info>{info}</Info>
           <CreationDate>{creationData}</CreationDate>
         </InfoWrapper>
