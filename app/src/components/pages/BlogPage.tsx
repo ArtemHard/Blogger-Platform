@@ -1,4 +1,3 @@
-import React from "react";
 import { Blog } from "../Blog/Blog";
 import { ShowMoreBtn } from "../Elements/Buttons/ShowMoreBtn";
 import { RightHeader } from "../RightHeader";
